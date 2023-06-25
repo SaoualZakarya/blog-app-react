@@ -30,5 +30,49 @@
       "author": "mario",
       "id": 6
     }
+  ],
+  "comments": [
+    {
+      "id": 24132,
+      "blogNumber": 2,
+      "author": "user",
+      "content": "it is good blog ,i like it so much"
+    },
+    {
+      "id": 34132,
+      "blogNumber": 3,
+      "author": "moi",
+      "content": "bad blog ,try the better bro we are here "
+    },
+    {
+      "id": 414,
+      "blogNumber": 4,
+      "author": "moh",
+      "content": "absolutely awesome "
+    },
+    {
+      "id": 414135,
+      "blogNumber": 5,
+      "author": "tahar",
+      "content": " bad , but it's okay "
+    },
+    {
+      "id": 43216,
+      "blogNumber": 6,
+      "author": "safi",
+      "content": "what the hell is this "
+    },
+    {
+      "id": 43212,
+      "blogNumber": 2,
+      "author": "zakarya",
+      "content": "this is new comment write it by me"
+    },
+    {
+      "id": 1687703475964,
+      "blogNumber": "7",
+      "author": "fasd",
+      "content": "fasd"
+    }
   ]
 }

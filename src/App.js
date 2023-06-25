@@ -3,7 +3,7 @@ import Create from './Create';
 import Home from './Home';
 import Navbar from './Navbar';
 import {BrowserRouter as Router , Route , Switch } from 'react-router-dom'
-import NotFound from './NotFound';
+import NotFound from './NotFound'
 export default function App() {
 
   return (

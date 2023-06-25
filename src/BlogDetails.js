@@ -1,18 +1,32 @@
 import {useParams,useHistory} from 'react-router-dom'
 import useFetch from './useFetch';
+import Comment from './Comment';
+
 const BlogDetails = () => {
 
+    // get the blog id dynamic
     const { id } = useParams();
+    // fetch the blog data from the local server
     const {data: blog , isPending , error } = useFetch(`http://localhost:8000/blogs/`+id);
     const history = useHistory() ;
 
-    const  handleDelete = ()=> {
-        fetch('http://localhost:8000/blogs/'+blog.id,{
-            method:'DELETE' ,
-        }).then(()=>{
+    const handleDelete = () => {
+        Promise.all([
+          fetch('http://localhost:8000/blogs/' + blog.id, {
+            method: 'DELETE',
+          }),
+          fetch('http://localhost:8000/comments/?blogNumber=' + blog.id, {
+            method: 'DELETE',
+          }),
+        ])
+          .then(() => {
             history.push('/');
-        })
-    }
+          })
+          .catch((error) => {
+            console.error('Error deleting the blog and comments:', error);
+          });
+      };
+      
 
     return ( 
         <div>
@@ -25,7 +39,11 @@ const BlogDetails = () => {
                 <p className='text-gray-400'>Written by : {blog.author}</p>
                 <button onClick ={handleDelete} className='p-2 rounded-[10px] my-5 bg-green-500 w-fit text-white text-center'> delete </button>
             </article>) }
+            <div>
+                <Comment theIdOfBlog={id} />
+            </div>
         </div>
+
     );
 }
 
